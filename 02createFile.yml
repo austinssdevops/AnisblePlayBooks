@@ -1,8 +1,11 @@
 ---
-- hosts: appServers
+- hosts: ungrouped
   tasks:
    - name: Create a file
      file:
-      path: /tmp/Mithun.txt 
+      path: /tmp/Mithun.txt
+      owner: ansible
+      group: ansible
+      mode: 0777
       state: touch
 ...
